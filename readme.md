@@ -189,9 +189,25 @@ Bisa dibilang context ini seperti **Middleware** di Express. Context harus bersi
 const { url } = await startStandaloneServer(server, {
     listen: { port: 4000 },
     context: async ({ req,res }) => {
-        // logic authentication etc
+        return {
+            authN : "ini authN",
+            authZ : "ini authZ"
+        }
     },
 });
+```
+
+**Cara akses context di resolver**
+```js
+const resolver = {
+    Query: {
+        books: (parent, args, contextValue, info) => {
+            console.log(contextValue.authN)
+            console.log(contextValue.authZ)
+            return books
+        }
+    }
+}
 ```
 
 [Dokumentasi Context](https://www.apollographql.com/docs/apollo-server/data/context)

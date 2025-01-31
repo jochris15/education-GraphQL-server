@@ -53,12 +53,15 @@ const books = [
 // Resolver seperti controller (REST API), berisi semua logic yang berhubungan untuk mendapatkan datanya
 const resolvers = {
     Query: {
-        books: () => {
+        books: (parent, args, contextValue, info) => {
             // your logic
+            console.log(contextValue.authN)
+            console.log(contextValue.authZ)
 
             return books
         },
         book: (parent, args, contextValue, info) => {
+            log
             // cara dapetin ID nya gimana?
             // by default, setiap resolver menerima 4 parameter
             const { bookId } = args
