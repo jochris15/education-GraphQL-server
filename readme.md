@@ -27,7 +27,6 @@ Apa itu **Apollo Server**? Apollo Server adalah library yang digunakan untuk mem
 [Dokumentasi Apollo Server](https://www.apollographql.com/docs/apollo-server/getting-started)
 
 ### Schema
----
 Schema adalah deskripsi data yang kita punya, biasanya kita membuat sebuah schema dengan menggunakan nama variable **typeDefs**.
 <br>
 ```js
@@ -53,7 +52,6 @@ const typeDefs = `#graphql
 [Dokumentasi Schema](https://www.apollographql.com/docs/apollo-server/schema/schema)
 
 ### Resolver
----
 Resolver adalah fungsi yang digunakan untuk mengambil data dari database atau sumber data lainnya. Resolver seperti controller (REST API), semua logic yang berhubungan untuk mendapatkan data yang dibutuhkan ada disini
 
 ```js
@@ -80,7 +78,6 @@ const resolvers = {
 
 
 ### Mutation Type (Modif data)
----
 Dengan contoh diatas, kita sudah belajar bagaimana membuat schema dan resolver yang memiliki fitur **Find All** & **Find By ID**. Kita akan belajar untuk memodifikasi data yang ada di server kita dengan menggunakan **Mutation type**
 
 - Schema :
@@ -119,7 +116,6 @@ const resolver = {
 
 
 ### Input type
----
 Kita ingin menambahkan fitur update book, tetapi parameternya terlalu banyak dan redundant, sama seperti parameter addBook. Kita bisa menggunakan **Input type** untuk mengelompokkan parameter yang banyak menjadi satu.
 
 - Schema :
@@ -180,7 +176,6 @@ const resolver = {
 [Dokumentasi Input Type](https://www.apollographql.com/docs/apollo-server/schema/schema#input-types)
 
 ### Context
----
 Context adalah objek yang berisi informasi yang bisa diakses oleh semua resolver. Context biasanya digunakan untuk menyimpan informasi user yang sedang login, seperti token, user id, dll.
 <br>
 Bisa dibilang context ini seperti **Middleware** di Express. Context harus bersifat async.
