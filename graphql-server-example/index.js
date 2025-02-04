@@ -1,6 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
-import { typeDefs as bookTypeDefs, resolvers as bookResolvers } from './schemas/bookSchema';
+import { typeDefs as bookTypeDefs, resolvers as bookResolvers } from './schemas/bookSchema.js';
 
 const server = new ApolloServer({
     typeDefs: [bookTypeDefs],
