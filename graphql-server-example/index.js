@@ -61,7 +61,6 @@ const resolvers = {
             return books
         },
         book: (parent, args, contextValue, info) => {
-            log
             // cara dapetin ID nya gimana?
             // by default, setiap resolver menerima 4 parameter
             const { bookId } = args
