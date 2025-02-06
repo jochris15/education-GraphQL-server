@@ -9,6 +9,12 @@ const server = new ApolloServer({
 
 const { url } = await startStandaloneServer(server, {
     listen: { port: 4000 },
+    context: async ({ req,res }) => {
+        return {
+            authN : "ini authN",
+            authZ : "ini authZ"
+        }
+    },
 });
 
 console.log(`🚀  Server ready at: ${url}`);
